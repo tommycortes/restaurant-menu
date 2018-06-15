@@ -10,9 +10,9 @@ package dtrie is
    overflow: exception;
    
    procedure t_empty(t: out trie);
-   procedure put(t: in out trie; k: in key);
-   function exists(t: in trie; k: in key)return boolean;
-   procedure delete(t: in out trie; k in key);
+   procedure t_put(t: in out trie; k: in key);
+   function t_exists(t: in trie; k: in key)return boolean;
+   procedure t_delete(t: in out trie; k: in key);
    function t_is_empty(t: in trie) return boolean;
    
 private
