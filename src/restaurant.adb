@@ -1,26 +1,18 @@
 with Ada.Text_IO; use Ada.Text_IO;
-with darray_enum;
+with Ada.Strings.Unbounded.Text_IO; use Ada.Strings.Unbounded.Text_IO;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with dmenu;
 
 procedure Restaurant is
+   package mimenu is new dmenu(Integer);
+   use mimenu;
+   my_menu: menu;
 
-   type FOOD_CLASS is (STARTER, FIRST);
-
-   package FoodClassArray is new darray_enum(item => Character, key => FOOD_CLASS); use FoodClassArray;
-
-   my_array: array_enum;
-
-   char1, char2: Character;
-
+   key: tkey;
 begin
 
-   --a_empty(my_array, 'X');
-   a_put(my_array, STARTER, 'S');
-   a_put(my_array, FIRST, 'O');
-
-   a_get(my_array, STARTER, char1);
-   a_get(my_array, FIRST, char2);
-
-   Put(char1);
-   Put(char2);
-
+   key(0) := 'A';
+   key(1) := '@';
+   m_put(my_menu, STARTER, key, To_Unbounded_String("mierda"));
+   m_delete_element(my_menu, STARTER, key);
 end Restaurant;
