@@ -1,11 +1,11 @@
 package body darray_enum is
    
    --when trie implementation is done, quit item and assign with null
-   procedure a_empty(a: out array_enum; x: in item) is
+   procedure a_empty(a: out array_enum) is
    begin
       
       for i in a.values'Range loop
-         a.values(i) := x;
+         a.values(i) := null;
       end loop;
       
    end a_empty;
@@ -24,8 +24,9 @@ package body darray_enum is
       
    end a_put;
    
-   procedure a_remove(a: in out array_enum; k: in key) is
-   begin
-      a.values(k) := null;
+   --procedure a_remove(a: in out array_enum; k: in key) is
+   --begin
+     -- a.values(k) := null;
+  -- end a_remove;
    
 end darray_enum;
