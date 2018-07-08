@@ -37,7 +37,6 @@ package body dqueue_pointers is
       else
          q.last := null;
       end if;
-      
    end delete_first;
    
    function get_first(q: in queue) return elem is
