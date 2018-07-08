@@ -3,7 +3,7 @@ generic
 
 package dqueue_pointers is
    
-   type queue is private;
+   type queue is limited private;
    
    bad_use: exception;
    overflow: exception;
