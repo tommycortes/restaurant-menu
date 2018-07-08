@@ -9,10 +9,17 @@ procedure Restaurant is
    my_menu: menu;
 
    key: tkey;
+
+   type class is(ENTR, PRIME);
+   type comida is array(class) of Integer;
+   c: comida;
 begin
 
-   key(0) := 'A';
+   c(ENTR) := 1;
+
+
+   key(1..3) := 'A';
    key(1) := '@';
-   m_put(my_menu, STARTER, key, To_Unbounded_String("mierda"));
+   m_put(my_menu, STARTER, key, To_Unbounded_String("hola"));
    m_delete_element(my_menu, STARTER, key);
 end Restaurant;

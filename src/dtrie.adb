@@ -21,7 +21,7 @@ package body dtrie is
          p:= p.ti(c); i:= i+1; c:= k(i);
       end loop;
       
-      return c = mk and p.ti(mk) = p;
+      return c = mk and p.ti(mk) = p; --hacer que sea != null, ya no es un autopuntero
    end t_exists;
    
    procedure t_put(t: in out trie; k: in key; x: in elem) is

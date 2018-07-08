@@ -6,7 +6,7 @@ generic
    
 package dtrie is   
    
-   type trie is private;
+   type trie is limited private;
    
    overflow: exception;
    
